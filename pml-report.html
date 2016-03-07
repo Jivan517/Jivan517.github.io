@@ -4,7 +4,7 @@
 </head>
 
 <body>
-<center>
+
 <h2>Background</h2>
 
 Using devices such as Jawbone Up, Nike FuelBand, and Fitbit it is now possible to collect a large amount of data about personal activity relatively inexpensively. These type of devices are part of the quantified self movement – a group of enthusiasts who take measurements about themselves regularly to improve their health, to find patterns in their behavior, or because they are tech geeks. One thing that people regularly do is quantify how much of a particular activity they do, but they rarely quantify how well they do it. In this project, your goal will be to use data from accelerometers on the belt, forearm, arm, and dumbell of 6 participants. They were asked to perform barbell lifts correctly and incorrectly in 5 different ways.
@@ -70,16 +70,16 @@ testData <- trainingCleaned[-inTrain, ]
 <br/>
  <h2>How you used cross validation?</h2>
 
- Now, our model is ready for applying the classification & regression tree algorithm. We'll be using 10-fold (k-fold) cross validation - The k-fold cross validation method involves splitting the dataset into k-subsets. For each subset is held out while the model is trained on all other subsets. It is a robust method for estimating accuracy, and the size of k and tune the amount of bias in the estimate, with popular values set to 3, 5, 7 and 10.
+ Now, our model is ready for applying the classification & regression tree algorithm. We'll be using 10-fold (k-fold) cross validation - The k-fold cross validation method involves splitting the dataset into k-subsets. For each subset is held out while the model is trained on all other subsets. It is a robust method for estimating accuracy, and the size of k and tune the amount of bias in the estimate, with popular values set to 3, 5, 7 and 10.<br>
  
- To build our prediction model for the output variable 'Classe', we'll be using the Gradient Boosting Machines (GBMs) algorithm eventhough it may be succeptible for overfitting in case of noisy data unlike the Random Forest Algorithm. The choice here is - to try out both for the problem domain
+ To build our prediction model for the output variable 'Classe', we'll be using the Gradient Boosting Machines (GBMs) algorithm eventhough it may be succeptible for overfitting in case of noisy data unlike the Random Forest Algorithm. The choice here is - to try out both for the problem domain. <br>
  
- Boosting is based on weak learners (high bias, low variance). In terms of decision trees, weak learners are shallow trees, sometimes even as small as decision stumps (trees with two leaves). Boosting reduces error mainly by reducing bias (and also to some extent variance, by aggregating the output from many models).
+ Boosting is based on weak learners (high bias, low variance). In terms of decision trees, weak learners are shallow trees, sometimes even as small as decision stumps (trees with two leaves). Boosting reduces error mainly by reducing bias (and also to some extent variance, by aggregating the output from many models). <br>
  
-On the other hand, Random Forest uses fully grown decision trees (low bias, high variance). It tackles the error reduction task in the opposite way: by reducing variance. The trees are made uncorrelated to maximize the decrease in variance, but the algorithm cannot reduce bias (which is slightly higher than the bias of an individual tree in the forest). Hence the need for large, unprunned trees, so that the bias is initially as low as possible.
+On the other hand, Random Forest uses fully grown decision trees (low bias, high variance). It tackles the error reduction task in the opposite way: by reducing variance. The trees are made uncorrelated to maximize the decrease in variance, but the algorithm cannot reduce bias (which is slightly higher than the bias of an individual tree in the forest). Hence the need for large, unprunned trees, so that the bias is initially as low as possible.<br>
 
-GBMs - run on trial after trial
-RFs - run in distributed fashion in parallel
+GBMs - run on trial after trial <br>
+RFs - run in distributed fashion in parallel<br>
 
 <pre><code>
 controlBoost<- trainControl(method="cv", 10)
@@ -100,26 +100,27 @@ out_of_sample_error <- 1 - as.numeric(confusionMatrix(testData$classe, predictTr
 
 Now, let's apply this model to our cleaned testing set - 
 
+<pre<code>
 final_result <- predict(modelFit, testingCleaned[, -length(names(testingCleaned))])
-
+</code></pre>
 
 Finally, let visualize the data with some plots - 
-
-Tree Plot:
+<br><b>
+Tree Plot:</b>
 
 <pre><code>
 finalModel <- rpart(classe ~ ., data=trainData, method="class")
 prp(finalModel)
 
 </code></pre>
-
-Correlation Matrix:
+<br><b>
+Correlation Matrix:</b>
 <pre><code>
 correlation_plot <- cor(trainData[, -length(names(trainData))])
 correlation_plot(correlation_plot, method="color")
 </code></pre>
 
-</center>
+
 
 
 
