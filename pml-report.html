@@ -4,18 +4,19 @@
 </head>
 
 <body>
+<center>
 <h2>Background</h2>
-<pre>
-Using devices such as Jawbone Up, Nike FuelBand, and Fitbit it is now possible to collect a large amount of data about personal activity relatively inexpensively. These type of devices are part of the quantified self movement – a group of enthusiasts who take measurements about themselves regularly to improve their health, to find patterns in their behavior, or because they are tech geeks. One thing that people regularly do is quantify how much of a particular activity they do, but they rarely quantify how well they do it. In this project, your goal will be to use data from accelerometers on the belt, forearm, arm, and dumbell of 6 participants. They were asked to perform barbell lifts correctly and incorrectly in 5 different ways.</pre>
+
+Using devices such as Jawbone Up, Nike FuelBand, and Fitbit it is now possible to collect a large amount of data about personal activity relatively inexpensively. These type of devices are part of the quantified self movement – a group of enthusiasts who take measurements about themselves regularly to improve their health, to find patterns in their behavior, or because they are tech geeks. One thing that people regularly do is quantify how much of a particular activity they do, but they rarely quantify how well they do it. In this project, your goal will be to use data from accelerometers on the belt, forearm, arm, and dumbell of 6 participants. They were asked to perform barbell lifts correctly and incorrectly in 5 different ways.
 <br/>
 
  <h2>How you built your model?</h2>
- <pre>
+ 
 Model building requires the adequate data collection that is relavant to the problem description. First, I downloaded the data from the given links for Training and Testing.
-The necessary writeup in R for building the model - </pre>
+The necessary writeup in R for building the model - 
 
-<pre>
-<code> 
+
+<pre><code> 
 library(caret)
 #Loading required package: lattice
 #Loading required package: ggplot2
@@ -26,7 +27,8 @@ library(corrplot)
 </code></pre>
 
 And, then created an inputData directory and kept the downloaded data - 
-<code>
+
+<pre><code>
 trainingData <- read.csv("./inputData/pml-training.csv")
 testingData <- read.csv("./inputData/pml-testing.csv")
 dim(trainingData)
@@ -38,10 +40,10 @@ dim(testingData)
 
 
 </code>
-
+</pre>
 Let's remove some of the columns containing N/A missing values and those columns which are not actually relavant for the accelerometers case:
 
-<code>
+<pre><code>
 trainingData <- trainingData[, colSums(is.na(trainingData)) == 0] 
 testingData <- testingData[, colSums(is.na(testingData)) == 0]
 
@@ -53,17 +55,17 @@ trainingCleaned$classe <- classe
 testingRemove <- grepl("^X|timestamp|window", names(testingData))
 testingData <- testingData[, !testingRemove]
 testingCleaned <- testingData[, sapply(testingData, is.numeric)]
-</code>
+</code></pre>
 
 Now, we'll slice the data with the help of <caret> R-package into 70% as training set and the remaining 30% as the test set -
 
-<code>
+<pre><code>
 set.seed(200) #Reproducible results for pseudo RNs
 inTrain <- createDataPartition(trainingCleaned$classe, p=0.70, list=F)
 trainData <- trainingCleaned[inTrain, ]
 testData <- trainingCleaned[-inTrain, ]
 
-</code>
+</code></pre>
 
 <br/>
  <h2>How you used cross validation?</h2>
@@ -79,22 +81,22 @@ On the other hand, Random Forest uses fully grown decision trees (low bias, high
 GBMs - run on trial after trial
 RFs - run in distributed fashion in parallel
 
-<code>
+<pre><code>
 controlBoost<- trainControl(method="cv", 10)
 modelFit <- train(classe ~ ., data=trainData, method="gbm", verbose=F, trControl=controlBoost)
 
 
 predictTree <- predict(modelFit, testData)
 confusionMatrix(testData$classe, predictTree)
-</code>
+</code></pre>
 <br/>
  <h2>What you think the expected out of sample error is?</h2>
 The out-of-sample error - 
 
-<code>
+<pre><code>
 accuracy <- postResample(predictTree, testData$classe)
 out_of_sample_error <- 1 - as.numeric(confusionMatrix(testData$classe, predictTree)$overall[1])
-</code>
+</code></pre>
 
 Now, let's apply this model to our cleaned testing set - 
 
@@ -105,19 +107,19 @@ Finally, let visualize the data with some plots -
 
 Tree Plot:
 
-<code>
+<pre><code>
 finalModel <- rpart(classe ~ ., data=trainData, method="class")
 prp(finalModel)
 
-</code>
+</code></pre>
 
 Correlation Matrix:
-<code>
+<pre><code>
 correlation_plot <- cor(trainData[, -length(names(trainData))])
 correlation_plot(correlation_plot, method="color")
-</code>
+</code></pre>
 
-
+</center>
 
 
 
