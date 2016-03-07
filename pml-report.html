@@ -100,25 +100,35 @@ out_of_sample_error <- 1 - as.numeric(confusionMatrix(testData$classe, predictTr
 
 Now, let's apply this model to our cleaned testing set - 
 
-<pre<code>
+<pre><code>
 final_result <- predict(modelFit, testingCleaned[, -length(names(testingCleaned))])
 </code></pre>
 
 Finally, let visualize the data with some plots - 
 <br><b>
+<br>
 Tree Plot:</b>
 
 <pre><code>
 finalModel <- rpart(classe ~ ., data=trainData, method="class")
 prp(finalModel)
 
-</code></pre>
+</code>
+
+
+<img src ="/Figure/Rplot_Tree_Visualization.png">
+
+</pre>
 <br><b>
 Correlation Matrix:</b>
 <pre><code>
 correlation_plot <- cor(trainData[, -length(names(trainData))])
 correlation_plot(correlation_plot, method="color")
-</code></pre>
+</code>
+
+
+<img src ="/Figure/RPlot_Correlation_Plot.png">
+</pre>
 
 
 
