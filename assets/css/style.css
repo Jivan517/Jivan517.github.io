@@ -107,7 +107,7 @@ h1, h2, h3, h4, h5, h6 {
 	text-align:center;
 	background-attachment: relative;
 	background-position: center center;
-	min-height: 650px;
+	min-height: 800px;
 	width: 100%;
 	
     -webkit-background-size: 100%;
@@ -151,8 +151,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #footerwrap {
-	padding-top: 70px;
-	padding-bottom: 50px;
+	padding-top: 30px;
+	padding-bottom: 0px;
 	background-color: #2f2f2f;
 }
 
@@ -168,7 +168,7 @@ h1, h2, h3, h4, h5, h6 {
 	text-align:center;
 	background-attachment: relative;
 	background-position: center center;
-	min-height: 650px;
+	min-height: 800px;
 	width: 100%;
 	
     -webkit-background-size: 100%;
