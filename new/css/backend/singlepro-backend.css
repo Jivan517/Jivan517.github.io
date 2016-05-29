@@ -1,0 +1,54 @@
+/*Redux framework styles*/
+
+.toplevel_page_redux_options .wp-menu-image img {padding: 7px 0 0 !important;}
+.toplevel_page_redux_options:hover .wp-menu-image img {opacity: 1 !important;}
+#redux-header {border-radius: 4px 4px 0 0;position: relative;background:#fff !important;}
+.redux-container #redux-header .display_header{
+margin: 20px 0px 20px 200px;
+float: left;
+}
+.redux-container #redux-header .display_header h2{font-weight:bold;color:#000;}
+.admin-color-fresh #redux-header {border-bottom:3px solid #2DA2C8;}
+/*theme author logo
+#redux-header:after {
+position: absolute;
+top: 24px;
+right: -100px;
+content: '';
+background: url(../img/wpf-logo.png) no-repeat;
+display: block;
+width: 200px;
+height: 60px;
+}*/
+/*theme logo*/
+#redux-header:before {
+position: absolute;
+top: 17px;
+left: 5px;
+content: '';
+background: url(../../img/logo/singlepro-logo.png) no-repeat;
+display: block;
+width: 250px;
+height: 80px;
+}
+
+
+/* Wpfreeware backend styles ***********************************************/
+
+.theme_preview_container{position:relative;width:100%;height:400px;}
+.theme_preview_container img{width:100%;height:100%;}
+.btn_container{position:absolute;bottom:10px;left:34%;width:300px;padding:10px;}
+.btn_container a{display:inline-block;padding:10px 20px;background:#027EC6;margin-right:20px;color:#fff;border-radius:5px;text-decoration:none;box-shadow:1px 3px 0 2px #0C4C89;font-weight:bold;}
+.btn_container a:hover{background:#1E8CBE}
+.view_all_themes{margin:20px;text-align:center;font-size:18px;line-height:20px;padding:10px;}
+.view_all_themes a{color:#FBA1A3;display:block;font-weight:bold;}
+
+
+/* social like box styles *****************/
+
+.wpf_fb_twitter_button_container,#info-fb_like_box{position: absolute;
+right: -37px;
+top: -140px;
+width: 30%;}
+.wpf_fb_twitter_button_container iframe{}
+.wpf_fb_twitter_button_container iframe a, .wpf_fb_twitter_button_container iframe span{color:#fff !important;}
