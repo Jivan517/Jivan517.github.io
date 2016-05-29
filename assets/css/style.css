@@ -93,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-default .navbar-nav > li > a {
-	color: #1abc9c;
+	color: #008000;
 }
 
 /* ==========================================================================
@@ -138,7 +138,7 @@ h1, h2, h3, h4, h5, h6 {
 #social {
 	padding-top: 20px;
 	padding-bottom: 20px;
-	background-color: #2f2f2f;
+	background-color: #17202A;
 }
 
 #social i {
@@ -153,7 +153,7 @@ h1, h2, h3, h4, h5, h6 {
 #footerwrap {
 	padding-top: 30px;
 	padding-bottom: 0px;
-	background-color: #2f2f2f;
+	background-color: #17202A;
 }
 
 #footerwrap p {
