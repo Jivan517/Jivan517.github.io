@@ -1,0 +1,84 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\jnepali\\source\\repos\\Nepalijivan.Com.Np\\Nepalijivan.Com.Np.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\jnepali\\source\\repos\\Nepalijivan.Com.Np\\Nepalijivan.Com.Np.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jnepali\\source\\repos\\Nepalijivan.Com.Np\\Nepalijivan.Com.Np.csproj",
+        "projectName": "Nepalijivan.Com.Np",
+        "projectPath": "C:\\Users\\jnepali\\source\\repos\\Nepalijivan.Com.Np\\Nepalijivan.Com.Np.csproj",
+        "packagesPath": "C:\\Users\\jnepali\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jnepali\\source\\repos\\Nepalijivan.Com.Np\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jnepali\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://asrapdevoctps02:88/nuget/AAMVA.NuGet2": {},
+          "http://asrapdevoctps02:88/nuget/Aamva.NetCore/": {},
+          "http://asrapdevoctps02:88/nuget/NCS-V3": {},
+          "http://packagesource": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.WebAssembly": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.Build": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "System.Net.Http.Json": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400-preview-015151\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
