@@ -1,3 +1,3 @@
 #Jivan Nepali
 
-Go to : http://www.nepalijivan.com.np
+Go to : https://jivannepali.me
